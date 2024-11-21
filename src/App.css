@@ -1,3 +1,7 @@
+*{
+  box-sizing: border-box;
+  margin: 0px;
+}
 .App {
   text-align: center;
 }
@@ -35,4 +39,35 @@
   to {
     transform: rotate(360deg);
   }
+}
+body{
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: rgba(0, 0, 0, 0.9); /* Cor preta com 50% de transparência */
+    background-blend-mode: darken; /* Mistura a cor com a imagem */
+}
+/* Estilização para navegadores com suporte a Webkit */
+::-webkit-scrollbar {
+  width: 2px; /* Largura do scrollbar */
+  height: 12px; /* Altura do scrollbar */
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.9); /* Cor do fundo do track */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #a9a9a9; /* Cor do polegar */
+  border-radius: 6px; /* Arredondamento do polegar */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: black; /* Cor do polegar ao passar o mouse */
+}
+
+/* Para navegadores com suporte a scrollbar-color */
+* {
+  scrollbar-color: #a9a9a9 #f1f1f1; /* Polegar e trilha */
+  scrollbar-width: thin; /* Reduz a largura */
 }
