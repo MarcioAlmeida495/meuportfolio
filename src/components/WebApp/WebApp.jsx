@@ -1,9 +1,9 @@
 import {ImageCard} from '../ImageCard/ImageCard';
 export const WebApp = ({url = [''], }) => {
     return <>
-        {url.map(each => {
+        {url.map((each, index) => {
             console.log(each)
-            return <ImageCard width='100%' src={each}/>
+            return <ImageCard key={index} width='100%' src={each}/>
         })}
     </>
 }

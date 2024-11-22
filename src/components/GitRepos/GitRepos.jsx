@@ -28,7 +28,7 @@ export const GitRepos = () => {
         {repos.length === 0 && <LoadingIcon />}
         {repos.map((each, index) => {
             console.log(each);
-            return <Link key={index} href={each.html_url}>{each.html_url}</Link>
+            return <Link target="_blank" key={index} href={each.html_url}>{each.html_url}</Link>
         })}
     </div>
 }

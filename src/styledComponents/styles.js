@@ -79,32 +79,35 @@ export const ImageCardStyle = ({width = DefaultSize, height = DefaultSize, curso
     }
 `
 
-export const DivCard = ({height = '', width = '30%', float = 'right', addingStyles = ''}) => styled.div`
+export const DivCard = ({ height = '', width = '30%', float = 'right', addingStyles = '' }) => styled.div`
     padding: 20px;
-    // height: ${height};
-    width: calc(${width} - ${marginNavBar*2}px);
-    height: calc(${height} - ${marginNavBar*2}px);
+    width: calc(${width} - ${marginNavBar * 2}px);
+    height: calc(${height} - ${marginNavBar * 2}px);
     justify-items: center;
     margin: ${marginNavBar}px;
     box-sizing: border-box;
     background-color: black;
-    border: 1px rgba(255,255,255, 0.1) solid;
+    border: 1px rgba(255, 255, 255, 0.1) solid;
     float: ${float};
     overflow: auto;
+
     ${addingStyles}
     ${radius}
-
-    @media (max-width: 899px){
-        width: calc(100% - ${marginNavBar*2}px);
+    
+    @media (max-width: 899px) {
+        width: calc(100% - ${marginNavBar * 2}px);
+        height: auto;
     }
-`
+`;
+
 
 export const ButtonStyle = () => LinkStyle({color: 'white', hoverColor: 'eee', element: 'button'});
 
 
 export const BodyCardStyle = () => styled.div`
   margin: auto;
-  
+  display: column;
+  flex-direction: column;
   width: 100%;
   overflow: auto;
   height: 100%;
@@ -112,8 +115,6 @@ export const BodyCardStyle = () => styled.div`
   box-sizing: border-box;
   background-color: rgba(0,0,0, 0);
   color: #ccc;
-  scrollbar-width: thin; /* Estiliza barras no Firefox */
-  scrollbar-color: blue lightgray; /* Cor no Firefox */
 //   ${radius}
 `;
 export const BodyStyle = styled.div`
@@ -156,3 +157,14 @@ export const ModalStyledComponent = styled.div`
   }
 }
 ` 
+export const DivAllHeight = () => styled.div`
+height: 100%;
+display: inline-block; /* Faz a largura se ajustar ao conteúdo */
+float: left;
+overflow: hidden; /* Evita que a largura aumente com margens negativas ou elementos extras */
+
+@media (max-width: 899px) {
+    height: auto;
+    width: 100%;
+}
+`;

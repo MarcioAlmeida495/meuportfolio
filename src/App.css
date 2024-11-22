@@ -58,7 +58,7 @@ body{
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #a9a9a9; /* Cor do polegar */
+  background: #000000; /* Cor do polegar */
   border-radius: 6px; /* Arredondamento do polegar */
 }
 
@@ -68,6 +68,6 @@ body{
 
 /* Para navegadores com suporte a scrollbar-color */
 * {
-  scrollbar-color: #a9a9a9 #f1f1f1; /* Polegar e trilha */
+  scrollbar-color: #a9a9a9 #000000; /* Polegar e trilha */
   scrollbar-width: thin; /* Reduz a largura */
 }
