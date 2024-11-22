@@ -117,16 +117,16 @@ export const BodyCardStyle = () => styled.div`
 //   ${radius}
 `;
 export const BodyStyle = styled.div`
-    margin: auto;
+margin: auto;    
+padding: 10px 0px;
     width: 1200px;
     height: 100vh;
     box-sizing: border-box;
-    padding: 10px;
 
     @media (max-width: 899px) {
         width: 100%;
         margin: 0px;
-        padding: 10px;
+        padding: 10px 0px;
     }
 `
 export const ModalStyledComponent = styled.div`
