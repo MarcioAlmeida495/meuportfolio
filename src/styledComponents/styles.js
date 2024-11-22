@@ -11,7 +11,7 @@ height: 100vh;
 display: flex;
 flex-direction: column;
 // justify-content: flex-start;
-padding: 15px;
+padding: 30px 0px;
 top: 0px;
 justify-content: flex-start;
 display: flex;
@@ -19,11 +19,13 @@ width: 200px;
 // width: calc(100% - ${marginNavBar*2}px);
 float: left;
 align-items: center;   /* Alinha itens verticalmente */
-background-color: rgba(0,0,0, 0.9); /* Cor de fundo */
+background-color: rgba(0,0,0, 1); /* Cor de fundo */
 color: #fff;           /* Cor do texto */
 box-sizing: border-box;
 font-size: 25px;
-    ${radius}
+${radius}
+border:none;
+border-right:  1px solid rgba(255,255,255, 0.07 );
 
     
 `
@@ -63,18 +65,17 @@ export const LinkStyle = ({color = 'white', hoverColor = 'eee', element = 'a', s
 }
 const DefaultSize = '100px';
 
-export const ImageCardStyle = ({width = DefaultSize, height = DefaultSize}) => styled.img`
+export const ImageCardStyle = ({width = DefaultSize, height = DefaultSize, cursor = 'pointer'}) => styled.img`
     width: ${width};
     height: ${height};
     margin: auto;
-    margin-top: 40px;
     box-sizing: border-box;
     border: 5px solid rgba(255,255,255, 0.3);
     transition: transform ease 20ms;
 
     &:hover{
         // transform: scale(1.01);
-        cursor: pointer;
+        cursor: ${cursor};
     }
 `
 
@@ -125,6 +126,33 @@ export const BodyStyle = styled.div`
     @media (max-width: 899px) {
         width: 100%;
         margin: 0px;
-        padding: 0px;
+        padding: 10px;
     }
 `
+export const ModalStyledComponent = styled.div`
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  padding: 100px;
+  box-sizing: border-box;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.7); /* Fundo semi-transparente */
+  
+
+/* Estilo para o conteúdo do modal */
+  & img {
+  box-sizing: border-box;
+  background-color: #fff;
+  width: 80%;
+  height: 80%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: center;
+
+  &:hover{
+    cursor: zoom-out;
+  }
+}
+` 

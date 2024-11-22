@@ -35,7 +35,7 @@ export const NavBar = ({children}) => {
                 setWidth(w => w+range);
                 setCounter(counter+1);  
             }, totalTime);
-        }else if(!show && (counter>=0)){
+        }else if(!show && (counter>0)){
             setTimeout(() => {
                 setWidth(w => w-range);
                 setCounter(counter-1);
@@ -49,7 +49,12 @@ export const NavBar = ({children}) => {
     return <>
         
             <Nav style={{width: `${width}px`}}>
-                {show && children}
+                {console.log(children)}
+                {show && 
+                    children.map((each, index) => {
+                        return <div key={index}  onClick={()=>{setShow(!show)}} >{each}</div>
+                    })
+                }
             </Nav>
         
         <ButtonMenu onClick={()=>{

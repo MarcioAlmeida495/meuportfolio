@@ -17,7 +17,7 @@ const showAbout = 'aboutMe';
 const Body = BodyStyle;
 const Button = Link; // mesmo estilo de Link, que vem da NavBar 
 const BodyCard = BodyCardStyle({});
-const DivRight = DivCard({width: '600px', height: '100%', float:'left'});
+const DivRight = DivCard({width: '600px', height: '', float:'left'});
 
 export const Home = () => {
   const [showComponent, setShowComponent] = useState(0);
