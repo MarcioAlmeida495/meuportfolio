@@ -1,6 +1,6 @@
 // import styled from 'styled-components';
 import styled from 'styled-components';
-const radius = `border-radius: 0px; box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.8); border: 1px solid rgba(255,255,255, 0.07 );`
+const radius = `border-radius: 0px; box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2); border: 1px solid rgba(255,255,255, 0.07 );`
 
 const marginNavBar = 15;
 export const NavBarStyle = () => styled.nav`
@@ -70,7 +70,7 @@ export const ImageCardStyle = ({width = DefaultSize, height = DefaultSize, curso
     height: ${height};
     margin: auto;
     box-sizing: border-box;
-    border: 5px solid rgba(255,255,255, 0.3);
+    border: 5px solid rgba(255,255,255, 0.1);
     transition: transform ease 20ms;
 
     &:hover{
@@ -78,6 +78,28 @@ export const ImageCardStyle = ({width = DefaultSize, height = DefaultSize, curso
         cursor: ${cursor};
     }
 `
+
+export const DivInCard = ({ height = '', width = '30%', float = 'right', addingStyles = '' }) => styled.div`
+padding: 20px;
+width: calc(${width} - ${marginNavBar * 2}px);
+height: calc(${height} - ${marginNavBar * 2}px);
+justify-items: center;
+margin: ${marginNavBar}px;
+box-sizing: border-box;
+background-color: black;
+border: 1px rgba(255, 255, 255, 0.1) solid;
+float: ${float};
+overflow: auto;
+
+${addingStyles}
+${radius}
+
+@media (max-width: 899px) {
+    width: 100%;
+    margin: 10px 0px;
+    height: auto;
+}
+`;
 
 export const DivCard = ({ height = '', width = '30%', float = 'right', addingStyles = '' }) => styled.div`
     padding: 20px;
@@ -139,6 +161,7 @@ export const ModalStyledComponent = styled.div`
   height: 100vh;
   padding: 100px;
   box-sizing: border-box;
+  justify-content: center;
   overflow: hidden;
   background-color: rgba(0, 0, 0, 0.7); /* Fundo semi-transparente */
   
@@ -147,8 +170,8 @@ export const ModalStyledComponent = styled.div`
   & img {
   box-sizing: border-box;
   background-color: #fff;
-  width: 80%;
-  height: 80%;
+  width: 60%;
+  height: 60%;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   text-align: center;
 

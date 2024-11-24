@@ -44,7 +44,7 @@ body{
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-color: rgba(0, 0, 0, 0.9); /* Cor preta com 50% de transparência */
+    background-color: rgba(0, 0, 0, 0.8); /* Cor preta com 50% de transparência */
     background-blend-mode: darken; /* Mistura a cor com a imagem */
 }
 /* Estilização para navegadores com suporte a Webkit */
@@ -68,6 +68,32 @@ body{
 
 /* Para navegadores com suporte a scrollbar-color */
 * {
-  scrollbar-color: #a9a9a9 #000000; /* Polegar e trilha */
+  scrollbar-color: #444 #000000; /* Polegar e trilha */
+  scroll-behavior: auto;
   scrollbar-width: thin; /* Reduz a largura */
+}
+/* Estilizar a barra de rolagem */
+::-webkit-scrollbar {
+  width: 12px; /* Largura da scrollbar */
+}
+
+/* Estilizar o thumb (parte que desliza) */
+::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border: 2px solid #ffffff; /* Adiciona borda ao thumb */
+  border-radius: 10px; /* Bordas arredondadas */
+}
+
+/* Estilizar o track (fundo da scrollbar) */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border: 2px solid #cccccc; /* Adiciona borda ao track */
+  border-radius: 10px;
+}
+
+.myBody{
+  transition: background-color 10s;
+}
+.myBody:hover:not(:has(*:hover)) {
+  background-color: rgba(0,0,0,0.5);
 }

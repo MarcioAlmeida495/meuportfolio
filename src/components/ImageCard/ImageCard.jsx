@@ -10,12 +10,12 @@ export const ImageCard = ({width = '', height = '', src = ''}) => {
 
     return <>
         {showModal ? 
-            <Modal> 
+            <Modal style={{alignItems: 'center'}}> 
                 <Image 
                     onClick={()=>{
                         setShowModal(!showModal);
                     }}
-                    style={{width: '100%', height: '100%'}}
+                    style={{width: '70%', height: '70%'}}
                     src={src} 
                 /> 
             </Modal>

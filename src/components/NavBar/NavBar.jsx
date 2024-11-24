@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { LinkStyle } from "../../styledComponents/styles";
 import { NavBarStyle } from "../../styledComponents/styles"
 import { ButtonMenu } from "../Buttons/ButtonMenu";
@@ -24,7 +24,6 @@ export const NavBar = ({children}) => {
     const [show, setShow] = useState(false);
     const [width, setWidth] = useState(0);
     const [counter, setCounter] = useState(0);
-    const refButton = useRef(null);
     useEffect(()=>{
         var { width } = getScreenSize();
         if(width < 600){

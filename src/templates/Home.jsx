@@ -1,6 +1,6 @@
 // import logo from './logo.svg';
 import { GitRepos } from '../components/GitRepos/GitRepos';
-import { BodyCardStyle, DivCard, DivAllHeight } from '../styledComponents/styles';
+import { BodyCardStyle, DivCard, DivAllHeight, DivInCard } from '../styledComponents/styles';
 import { BodyStyle } from '../styledComponents/styles';
 import { Link } from '../components/NavBar/NavBar';
 import { NavBar } from '../components/NavBar/NavBar';
@@ -14,18 +14,28 @@ const DivVh = DivAllHeight();
 const Body = BodyStyle;
 const Button = Link; // mesmo estilo de Link, que vem da NavBar 
 const BodyCard = BodyCardStyle({});
-const DivInCardRight = DivCard({width: '550px', height: '', float:'left'});
-const DivCardRight = DivCard({width: '630px', height: '90vh', float: 'left', addingStyles: 'overflow: show;'});
+const DivInCardRight = DivInCard({width: '550px', height: '', float:'left', addingStyles: '@media (max-width: 899px) { width: 100%; margin: 10px 0px;}'});
+const DivCardRight = DivCard({width: '630px', height: '90vh', float: 'left', addingStyles: 'overflow: show; background-color: rgba(0,0,0,0);'});
 
+const Content = 
+[
+  {
+    text: 'Sobre',
+
+  },
+  {}
+]
 export const Home = () => {
   const refAboutMe = useRef(null); 
   const refGitRepos = useRef(null);
   const refWebApp = useRef(null);
-  const refContact = useRef(null)
+  const refContact = useRef(null);
 
   useEffect(()=>{
     console.log(refAboutMe);
   }, [])
+
+ 
 
   const handleScroll = (targetRef) => {
     if (targetRef.current) {
@@ -93,7 +103,12 @@ export const Home = () => {
                     gerenciar itens também, confira esse App nesse link - 
                   </p>
                 </>
-            </DivInCardRight>      
+            </DivInCardRight> 
+            <DivInCardRight style={{justifyContent: 'center', justifyItems: 'center'}} >
+              <h2>
+              Projeto de Controle de Estoques 
+              </h2>
+            </DivInCardRight>     
             <DivInCardRight ref={refContact} >
               <Contact />
             </DivInCardRight>
