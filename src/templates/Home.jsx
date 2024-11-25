@@ -14,9 +14,9 @@ const DivVh = DivAllHeight();
 const Body = BodyStyle;
 const Button = Link; // mesmo estilo de Link, que vem da NavBar 
 const BodyCard = BodyCardStyle({});
-const DivInCardRight = DivInCard({width: '550px', height: '', float:'left', addingStyles: '@media (max-width: 899px) { width: 100%; margin: 10px 0px;}'});
+const DivInCardRight = DivInCard({width: '550px', height: '100%', float:'left', addingStyles: '@media (max-width: 899px) { width: 100%; margin: 10px 0px;}'});
 const DivCardRight = DivCard({width: '630px', height: '90vh', float: 'left', addingStyles: 'overflow: show; background-color: rgba(0,0,0,0);'});
-
+// eslint-disable-next-line
 const Content = 
 [
   {
@@ -30,6 +30,7 @@ export const Home = () => {
   const refGitRepos = useRef(null);
   const refWebApp = useRef(null);
   const refContact = useRef(null);
+  const refAppStorage = useRef(null);
 
   useEffect(()=>{
     console.log(refAboutMe);
@@ -66,6 +67,11 @@ export const Home = () => {
                   App para Gerenciar Contas
                 </Button>
                 <Button onClick={()=>{
+                handleScroll(refAppStorage);
+              }}>
+                  App Controle de Estoque
+                </Button>
+                <Button onClick={()=>{
                 handleScroll(refContact);
               }}>
                   Contact
@@ -81,7 +87,7 @@ export const Home = () => {
                   <h2>about me </h2>
             </DivInCardRight>
             {/* GitRepos */}
-            <DivInCardRight ref={refGitRepos} className='DivInCardRight'>
+            <DivInCardRight ref={refGitRepos} className=''>
               <GitRepos />
             </DivInCardRight>
             {/* WebAppVenda */}
@@ -104,7 +110,7 @@ export const Home = () => {
                   </p>
                 </>
             </DivInCardRight> 
-            <DivInCardRight style={{justifyContent: 'center', justifyItems: 'center'}} >
+            <DivInCardRight ref={refAppStorage} style={{justifyContent: 'center', justifyItems: 'center', height: '100%'}} >
               <h2>
               Projeto de Controle de Estoques 
               </h2>

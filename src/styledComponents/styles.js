@@ -30,7 +30,7 @@ border-right:  1px solid rgba(255,255,255, 0.07 );
     
 `
 
-export const LinkStyle = ({color = 'white', hoverColor = 'eee', element = 'a', scaleRange = '1.1'}) => 
+export const LinkStyle = ({color = 'white', hoverColor = 'ccc', element = 'a', scaleRange = '1.00'}) => 
 {
     return styled[element]`
         bos-sizing: border-box;
